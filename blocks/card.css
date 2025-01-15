@@ -35,15 +35,23 @@
   cursor: pointer;
 }
 .card__like-btn:hover {
-  opacity: 50%;
+  opacity: 1;
 }
 
 @media screen and (max-width: 627px) {
   .card__image {
     height: 288px;
   }
+  .card__content {
+    height: 18px;
+  }
   .card__title {
     font-size: 16px;
     max-width: 288px;
+  }
+  .card__like-btn {
+    border: 2px;
+    width: 20px;
+    height: 18px;
   }
 }

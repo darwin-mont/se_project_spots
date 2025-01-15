@@ -49,25 +49,31 @@
   font-weight: 500;
   text-align: left;
 }
+
 .profile__edit-btn:hover {
-  opacity: 50%;
+  opacity: 100%;
 }
 .profile__add-btn {
+  width: 149px;
+  height: 52px;
   font-weight: 500;
   margin-top: 138px;
-  height: 52px;
   margin-left: auto;
   border-radius: 8px;
   background-color: #212121;
   color: #fcf5e5;
   font-size: 16px;
-  padding: 18px 32px;
   border: none;
   cursor: pointer;
 }
 
+.profile__add-btn-title {
+  margin: 73px 16px;
+  padding: 0;
+  display: contents;
+}
 .profile__add-btn:hover {
-  opacity: 50%;
+  opacity: 80%;
 }
 
 @media screen and (max-width: 627px) {
@@ -95,6 +101,9 @@
   .profile__column {
     font-size: 20px;
     margin: 0 0 20px;
+  }
+  .profile__edit-btn {
+    font-size: 16px;
   }
 
   .profile__add-btn {

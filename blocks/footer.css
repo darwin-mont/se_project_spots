@@ -3,12 +3,15 @@
   justify-content: center;
 }
 .footer__description {
-  color: #212121;
-  margin: 60px 0 60px;
+  margin: 60px 108px;
+  padding: 0;
+  width: 104px;
+  height: 16px;
+  color: #212121b2;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
-  text-align: left;
+  text-align: center;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }

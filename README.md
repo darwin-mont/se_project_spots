@@ -31,3 +31,9 @@ This is the link for the site on _Github Pages_
 [Spots](https://darwin-mont.github.io/se_project_spots/)
 
 https://darwin-mont.github.io/se_project_spots/
+
+## Video of Project
+
+[Video](https://drive.google.com/file/d/1orXvpDICjRK_z1cvSeEHNnDbgI2-5bYE/view?usp=drive_link)
+
+https://drive.google.com/file/d/1orXvpDICjRK_z1cvSeEHNnDbgI2-5bYE/view?usp=drive_link
