@@ -68,7 +68,6 @@
 }
 
 .profile__add-btn-title {
-  margin: 73px 16px;
   padding: 0;
   display: contents;
 }
@@ -104,6 +103,7 @@
   }
   .profile__edit-btn {
     font-size: 16px;
+    text-align: center;
   }
 
   .profile__add-btn {

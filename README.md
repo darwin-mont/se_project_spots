@@ -34,6 +34,6 @@ https://darwin-mont.github.io/se_project_spots/
 
 ## Video of Project
 
-[Video](https://drive.google.com/file/d/1orXvpDICjRK_z1cvSeEHNnDbgI2-5bYE/view?usp=drive_link)
+[Video](hhttps://drive.google.com/file/d/1orXvpDICjRK_z1cvSeEHNnDbgI2-5bYE/view?usp=sharing)
 
-https://drive.google.com/file/d/1orXvpDICjRK_z1cvSeEHNnDbgI2-5bYE/view?usp=drive_link
+https://drive.google.com/file/d/1orXvpDICjRK_z1cvSeEHNnDbgI2-5bYE/view?usp=sharing
