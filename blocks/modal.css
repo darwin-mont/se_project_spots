@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 20px;
+  visibility: hidden;
 }
 
 .modal_opened {
