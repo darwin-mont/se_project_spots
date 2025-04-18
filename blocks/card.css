@@ -38,6 +38,14 @@
   opacity: 1;
 }
 
+.card__like-btn_liked {
+  background-image: url(../images/liked-icon.svg);
+  opacity: 1;
+}
+.card__like-btn_liked:hover {
+  background-image: url(../images/liked-icon-hover.svg);
+}
+
 @media screen and (max-width: 627px) {
   .card__image {
     height: 288px;

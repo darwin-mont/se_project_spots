@@ -1,5 +1,5 @@
 .modal {
-  font-family: poppins, sans-serif;
+  font-family: poppins, Arial, Helvetica, sans-serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -40,6 +40,10 @@
   opacity: 0.4;
 }
 
+.modal__close-btn:hover {
+  opacity: 1;
+}
+
 .modal__title {
   margin: 0 0 32px;
   font-weight: 500;
@@ -57,19 +61,29 @@
   padding: 16px 12px;
   border-radius: 8px;
   border: 1px solid #21212166;
+  opacity: 0.4;
+  cursor: pointer;
 }
+.modal__input:hover {
+  opacity: 1;
+}
+
 .modal__submit-btn {
   width: 156px;
   padding: 18px 0;
   border-radius: 8px;
   background-color: #212121;
-  font-family: Poppins;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 16px;
   text-align: center;
   color: #ffffff;
   cursor: pointer;
+}
+
+.modal__submit-btn:hover {
+  opacity: 0.4;
 }
 
 @media screen and (max-width: 627px) {
