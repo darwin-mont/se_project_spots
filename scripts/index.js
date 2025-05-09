@@ -21,11 +21,19 @@ const cardFormElement = cardModal.querySelector(".modal__form");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 
-///
+//preview modal
+const previewModal = document.querySelector("#preview-modal");
+const previewModalImageTitle = previewModal.querySelector(".modal__caption");
+const previewModalCloseBtn = previewModal.querySelector(
+  ".modal__close-btn_type_preview"
+);
+const previewImageEl = previewModal.querySelector(".modal__image");
+const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 
-//Card related elements
-const cardsList = document.querySelector(".cards__list");
-const cardTemplate = document.querySelector("#card-template");
+previewModalCloseBtn.addEventListener("click", function () {
+  closeModal(previewModal);
+});
+////
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -34,6 +42,10 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
+
+//Card related elements
+const cardsList = document.querySelector(".cards__list");
+const cardTemplate = document.querySelector("#card-template");
 
 function handleProfileSubmit(evt) {
   evt.preventDefault();
@@ -44,7 +56,6 @@ function handleProfileSubmit(evt) {
 
 function handleAddCardSummit(evt) {
   evt.preventDefault();
-
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardEl = getCardElement(inputValues);
   cardsList.prepend(cardEl);
@@ -65,10 +76,29 @@ function getCardElement(data) {
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
 
-  ///liked btn
+  ///liked modal btn
   cardLikedBtn.addEventListener("click", () => {
     cardLikedBtn.classList.toggle("card__like-btn_liked");
   });
+
+  //card delete modal
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
+
+  cardDeleteBtn.addEventListener("click", () => {
+    cardDeleteBtn.closest(".card").remove();
+    //other way its to use: cardElement.remove(); - because weve used it before.
+    //other way its to use: cardElement.null(); - wich will let the engine know that that eleent has to be clean up
+  });
+
+  ///preview loading data
+  cardImageEl.addEventListener("click", () => {
+    previewModalImageTitle.textContent = data.name;
+    previewImageEl.src = data.link;
+    previewImageEl.alt = data.name;
+    openModal(previewModal);
+  });
+
+  ///
 
   return cardElement;
 }

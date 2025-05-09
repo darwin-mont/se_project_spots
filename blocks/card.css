@@ -1,3 +1,9 @@
+.card {
+  font-family: poppins, Arial, Helvetica, sans-serif;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
 .card__image {
   height: 413px;
   width: 100%;
@@ -12,6 +18,22 @@
   align-items: center;
   justify-content: space-between;
 }
+.card__delete-button {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  background-image: url(../images/delete-icon.svg);
+  background-color: transparent;
+  border: 0;
+  top: 10px;
+  right: 10px;
+}
+.card__delete-button:hover {
+  opacity: 1;
+  background-image: url(../images/delete-icon-hover.svg);
+  opacity: 1;
+}
+
 .card__title {
   max-width: 350px;
   font-size: 20px;

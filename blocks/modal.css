@@ -13,6 +13,9 @@
   padding: 0 20px;
   visibility: hidden;
 }
+.modal_type_preview {
+  padding: 0 16px;
+}
 
 .modal_opened {
   visibility: visible;
@@ -40,10 +43,20 @@
   opacity: 0.4;
 }
 
+.modal__close-btn_type_preview {
+  top: 0;
+  right: -52.5px;
+  background-image: url(../images/close-icon-preview.svg);
+  opacity: 100%;
+}
+
 .modal__close-btn:hover {
   opacity: 1;
 }
 
+.modal__close-btn_type_preview:hover {
+  opacity: 40%;
+}
 .modal__title {
   margin: 0 0 32px;
   font-weight: 500;
@@ -57,15 +70,49 @@
   gap: 8px;
   margin-bottom: 32px;
 }
+
+.modal__image-container {
+  position: relative;
+}
+
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+.modal__caption {
+  width: 214px;
+  height: 32px;
+
+  border-radius: 8px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  background-color: #212121;
+  color: #fcf5e5;
+  font-size: 16px;
+  border: none;
+  font-weight: 500;
+  font-display: auto;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  align-content: center;
+}
+
 .modal__input {
   padding: 16px 12px;
   border-radius: 8px;
   border: 1px solid #21212166;
-  opacity: 0.4;
   cursor: pointer;
 }
 .modal__input:hover {
-  opacity: 1;
+  border: 1px solid rgba(31, 31, 31, 0.4);
 }
 
 .modal__submit-btn {
@@ -87,11 +134,17 @@
 }
 
 @media screen and (max-width: 627px) {
+  .modal__close-btn_type_preview {
+    top: -48px;
+    right: 0;
+  }
+}
+@media screen and (max-width: 480px) {
   .modal {
     padding: 0 10px;
   }
   .modal__container {
-    padding: 12px;
+    padding: 2px 12px 12px;
   }
   .modal__title {
     font-size: 20px;
@@ -101,11 +154,22 @@
     top: 12px;
     right: 12px;
   }
+
   .modal__label {
     margin-bottom: 24px;
   }
 
   .modal__submit-btn {
     width: 100%;
+  }
+}
+@media screen and (max-width: 627px) {
+  /* Placed below the 480px media query to avoid being overwritten.*/
+  .modal__close-btn_type_preview {
+    top: -48px;
+    right: 0;
+  }
+  .modal__image {
+    max-width: unset;
   }
 }
