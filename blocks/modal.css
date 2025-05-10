@@ -13,14 +13,15 @@
   padding: 0 20px;
   transition: visibility 0.3s, opacity 0.3s ease-in;
   visibility: hidden;
+  opacity: 0;
 }
 .modal_type_preview {
   padding: 0 16px;
 }
 
 .modal_opened {
-  transition: visibility 0.3s, opacity 0.3s ease-in;
   visibility: visible;
+  opacity: 1;
 }
 .modal__container {
   background-color: #fff;
