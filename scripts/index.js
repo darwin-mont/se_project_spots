@@ -5,7 +5,7 @@ const cardModalBtn = document.querySelector(".profile__add-btn");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
-//Form elements - edit erea
+//Form elements - edit area
 const editModal = document.querySelector("#edit-modal");
 const editFormElement = editModal.querySelector(".modal__form");
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn");
@@ -60,6 +60,7 @@ function handleAddCardSummit(evt) {
   const cardEl = getCardElement(inputValues);
   cardsList.prepend(cardEl);
   closeModal(cardModal);
+  cardFormElement.reset();
 }
 
 ///GET CARD ELEMENTS///
@@ -85,8 +86,8 @@ function getCardElement(data) {
   const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
 
   cardDeleteBtn.addEventListener("click", () => {
-    cardDeleteBtn.closest(".card").remove();
-    //other way its to use: cardElement.remove(); - because weve used it before.
+    cardElement.remove();
+    //- because weve used it before.
     //other way its to use: cardElement.null(); - wich will let the engine know that that eleent has to be clean up
   });
 
