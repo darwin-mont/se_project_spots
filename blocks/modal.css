@@ -127,6 +127,8 @@
   display: block;
   color: red;
   margin-top: 8px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 .modal__submit-btn {
   width: 156px;
@@ -142,10 +144,11 @@
   cursor: pointer;
 }
 .modal__submit-btn-disabled {
-  color: grey;
+  opacity: 50%;
+  cursor: not-allowed;
 }
 .modal__submit-btn:hover {
-  opacity: 0.4;
+  opacity: 80%;
 }
 
 @media screen and (max-width: 627px) {
