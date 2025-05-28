@@ -39,17 +39,14 @@ const cardTemplate = document.querySelector("#card-template");
 previewModalCloseBtn.addEventListener("click", () => closeModal(previewModal));
 ///
 ///
-document.addEventListener("click", (event) => {
-  const modals = document.querySelectorAll(".modal");
-  modals.forEach((modal) => {
-    modal.addEventListener("mousedown", (e) => {
-      if (e.target === modal) {
-        closeModal(modal);
-      }
-    });
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (e) => {
+    if (e.target === modal) {
+      closeModal(modal);
+    }
   });
 });
-
 ///
 
 function openModal(modal) {

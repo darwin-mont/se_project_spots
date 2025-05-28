@@ -3,7 +3,7 @@ const settings = {
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__submit-btn_disabled",
-  inputErrorClass: "modal__input_type_error ",
+  inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error",
 };
 
@@ -15,7 +15,7 @@ const showInputError = (formEl, inputEl, errorMsg, config) => {
 const hideInputError = (formEl, inputEl, config) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = "";
-  inputEl.classList.remove("modal__input_type_error");
+  inputEl.classList.remove(config.inputErrorClass);
 };
 
 const checkInputValidity = (formEl, inputEl, config) => {
@@ -46,7 +46,7 @@ const disableButton = (buttonEl, config) => {
 };
 
 const resetValidation = (formEl, inputList, config) => {
-  inputList.forEach((input) => {
+  inputList.forEach((input, config) => {
     hideInputError(formEl, input, config);
   });
 };
