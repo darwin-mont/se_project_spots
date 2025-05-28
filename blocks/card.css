@@ -12,6 +12,9 @@
   border-radius: 8px;
   margin-bottom: 12px;
 }
+.card__image:hover {
+  cursor: pointer;
+}
 
 .card__content {
   display: flex;
@@ -32,6 +35,7 @@
   opacity: 1;
   background-image: url(../images/delete-icon-hover.svg);
   opacity: 1;
+  cursor: pointer;
 }
 
 .card__title {
