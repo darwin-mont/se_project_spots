@@ -4,6 +4,7 @@ import {
   enableValidation,
   validationConfig,
   resetValidation,
+  disableButton,
 } from "../scripts/validation.js";
 import { setBtnText } from "../utils/helpers.js";
 import Api from "../utils/Api.js";
@@ -141,8 +142,9 @@ function handleAvatarSubmit(evt) {
     })
     .then((data) => {
       profileAvatar.src = data.avatar;
-      closeModal(avatarModal);
       avatarFormElement.reset();
+      disableButton(cardSubmitBtn, validationConfig);
+      closeModal(avatarModal);
     })
     .catch(console.error)
     .finally(() => {
@@ -176,7 +178,7 @@ function handleAddCardSubmit(evt) {
 function handleDeleteCardSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
-  setBtnText(submitBtn, true);
+  submitBtn.textContent = "Deleting...";
   api
     .deleteCard(selectedCardId)
     .then(() => {
@@ -185,7 +187,7 @@ function handleDeleteCardSubmit(evt) {
     })
     .catch(console.error)
     .finally(() => {
-      setBtnText(submitBtn, false);
+      submitBtn.textContent = "Cancel";
     });
 }
 
@@ -198,7 +200,6 @@ function handleDeleteCard(cardElement, cardId) {
 
 function handleLike(evt, cardId) {
   const isLiked = evt.target.classList.contains("card__like-btn_liked");
-  evt.target.classList.toggle("card__like-btn_liked", !isLiked);
   api
     .likeStatus(cardId, !isLiked)
     .then(() => {
@@ -266,7 +267,7 @@ function getCardElement(data) {
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
-  editModalAvatarInput.value = profileAvatar.src;
+
   resetValidation(editFormElement, [
     editModalNameInput,
     editModalDescriptionInput,
