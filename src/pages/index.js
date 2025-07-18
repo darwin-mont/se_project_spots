@@ -266,6 +266,7 @@ function getCardElement(data) {
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
   cardElement.id = data._id;
+  cardLikedBtn.id = data._id;
 
   cardLikedBtn.addEventListener("click", (evt) => {
     handleLike(evt, data._id);
