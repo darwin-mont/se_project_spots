@@ -48,6 +48,11 @@
   overflow: hidden;
   margin: 0;
 }
+
+.card__delete-form {
+  display: flex;
+  align-items: center;
+}
 .card__like-btn {
   background-size: contain;
   background-position: center;
