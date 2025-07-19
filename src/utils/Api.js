@@ -3,8 +3,11 @@ class Api {
     this._baseUrl = baseUrl;
     this._headers = headers;
   }
-  _request(url, options) {
-    return fetch(url, options);
+  _request(url, options = {}) {
+    return fetch(url, {
+      ...options,
+      headers: this._headers,
+    }).then(this._checkResponse);
   }
 
   _checkResponse(res) {
@@ -15,66 +18,48 @@ class Api {
   }
 
   getAppInfo() {
-    // This method will return a promise that resolves to an array of cards and user info
     return Promise.all([this.getInitialCards(), this.getUserInfo()]);
   }
 
   getInitialCards() {
-    return fetch(`${this._baseUrl}/cards`, {
-      headers: this._headers,
-    }).then(this._checkResponse);
+    return this._request(`${this._baseUrl}/cards`);
   }
 
   addNewCard({ name, link }) {
-    return fetch(`${this._baseUrl}/cards`, {
+    return this._request(`${this._baseUrl}/cards`, {
       method: "POST",
-      headers: this._headers,
-      body: JSON.stringify({
-        name,
-        link,
-      }),
-    }).then(this._checkResponse);
+      body: JSON.stringify({ name, link }),
+    });
   }
 
   getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, {
-      headers: this._headers,
-    }).then(this._checkResponse);
+    return this._request(`${this._baseUrl}/users/me`);
   }
 
   editUserInfo({ name, about }) {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return this._request(`${this._baseUrl}/users/me`, {
       method: "PATCH",
-      headers: this._headers,
-      // Send the data in the body as a JSON string.
-      body: JSON.stringify({
-        name,
-        about,
-      }),
-    }).then(this._checkResponse);
+      body: JSON.stringify({ name, about }),
+    });
   }
-  getAvatarInfo({ avatar }) {
-    return fetch(`${this._baseUrl}/users/me/avatar`, {
+
+  updateAvatar({ avatar }) {
+    return this._request(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
-      headers: this._headers,
-      // Send the data in the body as a JSON string.
-      body: JSON.stringify({
-        avatar,
-      }),
-    }).then(this._checkResponse);
+      body: JSON.stringify({ avatar }),
+    });
   }
 
   deleteCard(id) {
-    return fetch(`${this._baseUrl}/cards/${id}`, {
+    return this._request(`${this._baseUrl}/cards/${id}`, {
       method: "DELETE",
-      headers: this._headers,
-    }).then(this._checkResponse);
+    });
   }
+
   likeStatus(id, isLiked) {
-    return fetch(`${this._baseUrl}/cards/${id}/likes`, {
+    return this._request(`${this._baseUrl}/cards/${id}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
-      headers: this._headers,
-    }).then(this._checkResponse);
+    });
   }
 
   // other methods for working with the API
